@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import * as colors from '../../utils/colors';
 
@@ -16,7 +17,7 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView keyboardShouldPersistTaps="always">
+      <ScrollView style={{flex: 1}} keyboardShouldPersistTaps="always">
         <View style={styles.headerTextContainer}>
           <Text style={styles.loginText}>Login</Text>
         </View>
@@ -65,10 +66,18 @@ const LoginScreen = () => {
             onPress={() => {
               //onLogin(user);
             }}>
-            <Text>Icon</Text>
+            <Text style={{color: colors.White}}>Icon</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
+      <View style={styles.appInfoContainer}>
+        <Image
+          resizeMode="contain"
+          style={styles.image}
+          source={require('../../assets/images/loginScreenLogo.png')}
+        />
+        <Text style={styles.appInfoText}>Welcome to Bug Tracker</Text>
+      </View>
     </SafeAreaView>
   );
 };
@@ -83,7 +92,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     marginTop: 40,
-    marginBottom: 20,
+    marginBottom: 10,
     justifyContent: 'space-between',
   },
   loginText: {
@@ -96,7 +105,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     marginHorizontal: 20,
-    marginBottom: 10,
+    marginBottom: 15,
     borderRadius: 30,
     backgroundColor: colors.Grey,
     paddingHorizontal: 20,
@@ -112,6 +121,25 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingHorizontal: 15,
     paddingVertical: 5,
+  },
+  appInfoContainer: {
+    paddingHorizontal: 40,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    marginTop: -100,
+    marginBottom: 20,
+    height: 250,
+    width: 250,
+    backgroundColor: colors.White,
+  },
+  appInfoText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: colors.Black,
   },
 });
 
