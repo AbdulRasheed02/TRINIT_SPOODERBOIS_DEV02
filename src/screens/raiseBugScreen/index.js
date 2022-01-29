@@ -14,8 +14,12 @@ import {scale, verticalScale} from 'react-native-size-matters';
 import {bug_creation_store} from '../../mobx/bug_creation_store';
 import {observer} from 'mobx-react';
 
-const RaiseBug = observer(() => {
+const RaiseBug = observer(({navigation}) => {
   console.log('WRITE');
+  const onSubmit = () => {
+    //api calls
+    navigation.goBack();
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{flex: 1}} keyboardShouldPersistTaps="always">
@@ -153,9 +157,9 @@ const RaiseBug = observer(() => {
               }}
               selectionColor={'black'}
               placeholderTextColor={colors.darkGrey}
-              value={bug_creation_store.getBugUserDevice}
+              value={bug_creation_store.getBugReplication}
               onChangeText={val => {
-                bug_creation_store.setBugUserDevice(val);
+                bug_creation_store.setBugReplication(val);
               }}
               multiline={true}
             />
@@ -163,7 +167,7 @@ const RaiseBug = observer(() => {
           <TouchableOpacity
             style={styles.submitBtnView}
             onPress={() => {
-              onLogin();
+              onSubmit();
             }}>
             <Icon name="chevron-right" size={scale(30)} color={colors.White} />
           </TouchableOpacity>
