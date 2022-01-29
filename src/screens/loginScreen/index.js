@@ -15,6 +15,7 @@ import {user_store} from '../../mobx/user_store';
 import {Picker} from '@react-native-picker/picker';
 import * as userTypes from '../../utils/userType';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {scale, verticalScale} from 'react-native-size-matters';
 
 const LoginScreen = navigation => {
   const [userName, setUserName] = useState('');
@@ -24,7 +25,7 @@ const LoginScreen = navigation => {
 
   const onLogin = () => {
     auth_store.logIn(123);
-    //Change to after successful API Call later
+    //Change location to after successful API Call later
     user_store.setUserType(userType);
     console.log('User Type: ' + userType);
   };
@@ -34,7 +35,7 @@ const LoginScreen = navigation => {
         <View style={styles.headerTextContainer}>
           <Text style={styles.loginText}>Login</Text>
         </View>
-        <View style={{marginBottom: 55}}>
+        <View style={{marginBottom: verticalScale(55)}}>
           <View style={styles.textInput}>
             <TextInput
               label="Username"
@@ -42,13 +43,18 @@ const LoginScreen = navigation => {
               mode="outlined"
               value={userName}
               autoCapitalize="none"
-              style={{backgroundColor: colors.Grey, fontSize: 18}}
+              style={{
+                backgroundColor: colors.Grey,
+                fontSize: scale(16),
+                color: colors.Black,
+              }}
               theme={{
                 colors: {
                   primary: 'black',
                 },
               }}
               selectionColor={'black'}
+              placeholderTextColor={colors.darkGrey}
               onChangeText={user => {
                 setUserName(user);
               }}
@@ -59,7 +65,11 @@ const LoginScreen = navigation => {
               autoCorrect={false}
               label="Password"
               placeholder="Enter your password"
-              style={{backgroundColor: colors.Grey, fontSize: 18}}
+              style={{
+                backgroundColor: colors.Grey,
+                fontSize: scale(16),
+                color: colors.Black,
+              }}
               mode="outlined"
               autoComplete={'off'}
               autoCapitalize="none"
@@ -70,6 +80,7 @@ const LoginScreen = navigation => {
                 },
               }}
               selectionColor={'black'}
+              placeholderTextColor={colors.darkGrey}
               value={password}
               onChangeText={password => setPassword(password)}
             />
@@ -80,11 +91,31 @@ const LoginScreen = navigation => {
               onValueChange={(itemValue, itemIndex) => setUserType(itemValue)}
               onFocus={() => setPickerFocused(true)}
               onBlur={() => setPickerFocused(false)}>
-              <Picker.Item label="Select User Type" enabled={!pickerFocused} />
-              <Picker.Item label="User" value={userTypes.user} />
-              <Picker.Item label="Team Leader" value={userTypes.teamLeader} />
-              <Picker.Item label="Manager" value={userTypes.manager} />
-              <Picker.Item label="Employee" value={userTypes.employee} />
+              <Picker.Item
+                label="Select User Type"
+                enabled={!pickerFocused}
+                color={colors.Black}
+              />
+              <Picker.Item
+                label="User"
+                value={userTypes.user}
+                color={colors.Black}
+              />
+              <Picker.Item
+                label="Team Leader"
+                value={userTypes.teamLeader}
+                color={colors.Black}
+              />
+              <Picker.Item
+                label="Manager"
+                value={userTypes.manager}
+                color={colors.Black}
+              />
+              <Picker.Item
+                label="Employee"
+                value={userTypes.employee}
+                color={colors.Black}
+              />
             </Picker>
           </View>
           <TouchableOpacity
@@ -92,7 +123,7 @@ const LoginScreen = navigation => {
             onPress={() => {
               onLogin();
             }}>
-            <Icon name="chevron-right" size={25} color={colors.White} />
+            <Icon name="chevron-right" size={scale(30)} color={colors.White} />
           </TouchableOpacity>
         </View>
         <View style={styles.appInfoContainer}>
@@ -117,60 +148,61 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: verticalScale(20),
+    marginBottom: verticalScale(10),
     justifyContent: 'space-between',
   },
   loginText: {
-    padding: 10,
-    fontSize: 30,
+    padding: scale(10),
+    fontSize: scale(25),
     fontWeight: 'bold',
     color: 'black',
-    marginLeft: 15,
+    marginLeft: scale(15),
     alignContent: 'flex-start',
   },
   textInput: {
-    marginHorizontal: 20,
-    marginBottom: 15,
-    borderRadius: 30,
+    marginHorizontal: scale(20),
+    marginBottom: verticalScale(8),
+    borderRadius: scale(30),
     backgroundColor: colors.Grey,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingLeft: scale(30),
+    paddingRight: scale(15),
+    paddingVertical: verticalScale(6),
   },
   pickerInput: {
-    marginHorizontal: 20,
-    marginBottom: 15,
-    borderRadius: 30,
+    marginHorizontal: scale(20),
+    marginBottom: verticalScale(10),
+    borderRadius: scale(30),
     backgroundColor: colors.Grey,
-    paddingHorizontal: 20,
-    paddingVertical: 0,
+    paddingHorizontal: scale(20),
+    paddingVertical: verticalScale(0),
   },
   loginBtnView: {
-    marginTop: 10,
-    marginHorizontal: 20,
+    marginTop: verticalScale(5),
+    marginHorizontal: scale(20),
     alignSelf: 'flex-end',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.Turquiose,
-    borderRadius: 30,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    borderRadius: scale(30),
+    paddingHorizontal: scale(10),
+    paddingVertical: verticalScale(10),
   },
   appInfoContainer: {
-    marginTop: 20,
-    paddingHorizontal: 40,
+    marginTop: verticalScale(-10),
+    paddingHorizontal: scale(40),
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
-    marginBottom: 20,
-    height: 225,
-    width: 225,
+    marginBottom: verticalScale(20),
+    height: scale(200),
+    width: scale(200),
     backgroundColor: colors.White,
   },
   appInfoText: {
-    fontSize: 30,
+    fontSize: scale(25),
     fontWeight: 'bold',
     textAlign: 'center',
     color: colors.Black,
