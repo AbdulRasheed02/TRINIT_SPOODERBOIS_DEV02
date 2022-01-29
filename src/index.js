@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import LoginScreen from './screens/loginScreen';
+import LoginScreen from './screens/LoginScreen';
 
 import {auth_store} from './mobx/auth_store';
 import {observer} from 'mobx-react';
