@@ -5,18 +5,25 @@ import {
   StyleSheet,
   ScrollView,
   SafeAreaView,
-  TextInput,
   TouchableOpacity,
   Image,
+  TextInput,
 } from 'react-native';
 import * as colors from '../../utils/colors';
 import {auth_store} from '../../mobx/auth_store';
+import {Picker} from '@react-native-picker/picker';
+import * as userTypes from '../../utils/userType';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 const LoginScreen = navigation => {
-  const [user, setUser] = useState('');
-  const [password, setPassword] = useState();
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [userType, setUserType] = useState();
+  const [pickerFocused, setPickerFocused] = useState(false);
 
   const onLogin = () => {
     auth_store.logIn(123);
+    console.log('User Type: ' + userType);
     console.log('Ab');
   };
   return (
@@ -31,7 +38,7 @@ const LoginScreen = navigation => {
               label="Username"
               placeholder="Enter your username"
               mode="outlined"
-              value={user}
+              value={userName}
               autoCapitalize="none"
               style={{backgroundColor: colors.Grey, fontSize: 18}}
               theme={{
@@ -41,7 +48,7 @@ const LoginScreen = navigation => {
               }}
               selectionColor={'black'}
               onChangeText={user => {
-                setUser(user);
+                setUserName(user);
               }}
             />
           </View>
@@ -65,23 +72,36 @@ const LoginScreen = navigation => {
               onChangeText={password => setPassword(password)}
             />
           </View>
+          <View style={styles.pickerInput}>
+            <Picker
+              selectedValue={userType}
+              onValueChange={(itemValue, itemIndex) => setUserType(itemValue)}
+              onFocus={() => setPickerFocused(true)}
+              onBlur={() => setPickerFocused(false)}>
+              <Picker.Item label="Select User Type" enabled={!pickerFocused} />
+              <Picker.Item label="User" value={userTypes.user} />
+              <Picker.Item label="Team Leader" value={userTypes.teamLeader} />
+              <Picker.Item label="Manager" value={userTypes.manager} />
+              <Picker.Item label="Employee" value={userTypes.employee} />
+            </Picker>
+          </View>
           <TouchableOpacity
             style={styles.loginBtnView}
             onPress={() => {
-              onLogin(user);
+              onLogin();
             }}>
-            <Text style={{color: colors.White}}>Icon</Text>
+            <Icon name="chevron-left" size={25} color={colors.White} />
           </TouchableOpacity>
         </View>
+        <View style={styles.appInfoContainer}>
+          <Image
+            resizeMode="contain"
+            style={styles.image}
+            source={require('../../assets/images/loginScreenLogo.png')}
+          />
+          <Text style={styles.appInfoText}>Welcome to Bug Tracker</Text>
+        </View>
       </ScrollView>
-      <View style={styles.appInfoContainer}>
-        <Image
-          resizeMode="contain"
-          style={styles.image}
-          source={require('../../assets/images/loginScreenLogo.png')}
-        />
-        <Text style={styles.appInfoText}>Welcome to Bug Tracker</Text>
-      </View>
     </SafeAreaView>
   );
 };
@@ -95,7 +115,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    marginTop: 40,
+    marginTop: 20,
     marginBottom: 10,
     justifyContent: 'space-between',
   },
@@ -115,6 +135,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
+  pickerInput: {
+    marginHorizontal: 20,
+    marginBottom: 15,
+    borderRadius: 30,
+    backgroundColor: colors.Grey,
+    paddingHorizontal: 20,
+    paddingVertical: 0,
+  },
   loginBtnView: {
     marginTop: 10,
     marginHorizontal: 20,
@@ -124,19 +152,19 @@ const styles = StyleSheet.create({
     backgroundColor: colors.Turquiose,
     borderRadius: 30,
     paddingHorizontal: 15,
-    paddingVertical: 5,
+    paddingVertical: 10,
   },
   appInfoContainer: {
+    marginTop: 20,
     paddingHorizontal: 40,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
-    marginTop: -100,
     marginBottom: 20,
-    height: 250,
-    width: 250,
+    height: 225,
+    width: 225,
     backgroundColor: colors.White,
   },
   appInfoText: {
