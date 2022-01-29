@@ -1,0 +1,32 @@
+body{
+    background-image: url('/img/b1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login{
+    height: 200px;
+    width: 300px;
+    position: relative;
+    top: 150px;
+    left: 1000px;
+    /*background-color: wheat;*/
+}
+
+.login_form{
+    padding: 30px;
+}
+
+.account_creation{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    top: 100px;
+    left: 625px;
+}
+
+.reporter{
+    position: absolute;
+    text-align: center;
+    left: 570px;
+    top: 120px;
+}
