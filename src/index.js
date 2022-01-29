@@ -1,13 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import LoginScreen from './screens/LoginScreen';
-
 import {auth_store} from './mobx/auth_store';
 import {observer} from 'mobx-react';
 import {Provider} from 'react-native-paper';
 import AppNavigator from './navigation/app-navigator';
+import LoginScreen from './screens/LoginScreen';
 
 const RootStack = createNativeStackNavigator();
 const index = observer(() => {

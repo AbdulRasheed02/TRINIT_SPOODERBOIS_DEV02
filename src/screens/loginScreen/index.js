@@ -26,6 +26,7 @@ const LoginScreen = navigation => {
   const onLogin = () => {
     auth_store.logIn(123);
     //Change location to after successful API Call later
+    user_store.setUserName(userName);
     user_store.setUserType(userType);
     console.log('User Type: ' + userType);
   };
