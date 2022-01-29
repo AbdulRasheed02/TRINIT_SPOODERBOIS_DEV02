@@ -4,7 +4,7 @@ import React from 'react';
 const MainMenu = () => {
   return (
     <View>
-      <Text>MAIN MENU</Text>
+      <Text style={{color: 'black'}}>MAIN MENU</Text>
     </View>
   );
 };

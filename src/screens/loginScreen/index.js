@@ -90,7 +90,7 @@ const LoginScreen = navigation => {
             onPress={() => {
               onLogin();
             }}>
-            <Icon name="chevron-left" size={25} color={colors.White} />
+            <Icon name="chevron-right" size={25} color={colors.White} />
           </TouchableOpacity>
         </View>
         <View style={styles.appInfoContainer}>
