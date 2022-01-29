@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import * as colors from '../../utils/colors';
 import {auth_store} from '../../mobx/auth_store';
+import {user_store} from '../../mobx/user_store';
 import {Picker} from '@react-native-picker/picker';
 import * as userTypes from '../../utils/userType';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -23,8 +24,9 @@ const LoginScreen = navigation => {
 
   const onLogin = () => {
     auth_store.logIn(123);
+    //Change to after successful API Call later
+    user_store.setUserType(userType);
     console.log('User Type: ' + userType);
-    console.log('Ab');
   };
   return (
     <SafeAreaView style={styles.container}>

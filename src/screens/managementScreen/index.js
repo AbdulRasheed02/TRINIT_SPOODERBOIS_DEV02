@@ -4,7 +4,7 @@ import React from 'react';
 const ManagementScreen = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>Me Management</Text>
     </View>
   );
 };
