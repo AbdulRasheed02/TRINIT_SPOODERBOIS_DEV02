@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import MainMenu from '../../screens/MainMenu';
 import {user_store} from '../../mobx/user_store';
 import UserScreen from '../../screens/UserScreen';
 import ManagementScreen from '../../screens/ManagementScreen';

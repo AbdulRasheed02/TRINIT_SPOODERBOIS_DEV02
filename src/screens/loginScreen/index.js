@@ -16,14 +16,24 @@ import {Picker} from '@react-native-picker/picker';
 import * as userTypes from '../../utils/userType';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {scale, verticalScale} from 'react-native-size-matters';
+import {useToast} from 'react-native-toast-notifications';
 
 const LoginScreen = navigation => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [userType, setUserType] = useState();
+  const [userType, setUserType] = useState(0);
   const [pickerFocused, setPickerFocused] = useState(false);
+  const toast = useToast();
 
   const onLogin = () => {
+    if (userName.trim() === '' || password.trim() === '' || userType === 0) {
+      toast.show('Fill all the fields', {
+        type: 'warning',
+        placement: 'top',
+        animationType: 'slide-in',
+      });
+      return;
+    }
     auth_store.logIn(123);
     //Change location to after successful API Call later
     user_store.setUserName(userName);
@@ -92,6 +102,7 @@ const LoginScreen = navigation => {
               onValueChange={(itemValue, itemIndex) => setUserType(itemValue)}
               onFocus={() => setPickerFocused(true)}
               onBlur={() => setPickerFocused(false)}>
+              {/* This returns userType as 0 which is actually just used as a placeholder */}
               <Picker.Item
                 label="Select User Type"
                 enabled={!pickerFocused}

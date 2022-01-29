@@ -3,7 +3,7 @@ import {action, makeObservable, observable, computed} from 'mobx';
 class UserStore {
   state = {
     userName: '',
-    userType: null,
+    userType: 1,
   };
 
   setUserName = val => {
