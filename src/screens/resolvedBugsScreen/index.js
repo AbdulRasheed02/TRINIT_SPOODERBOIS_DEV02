@@ -4,7 +4,7 @@ import React from 'react';
 const ResolvedBugs = () => {
   return (
     <View>
-      <Text>Resolved Bugs</Text>
+      <Text style={{color: 'black'}}>Resolved Bugs</Text>
     </View>
   );
 };

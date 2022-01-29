@@ -17,7 +17,7 @@ import bugFindingLottie from '../../assets/lottieFiles/BugFinding.json';
 import LottieView from 'lottie-react-native';
 import findingBugLottie from '../../assets/lottieFiles/FindingBugs.json';
 
-const UserScreen = () => {
+const UserScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerTextContainer}>
@@ -30,7 +30,11 @@ const UserScreen = () => {
           </Text>
         </View>
         <View style={styles.cardContainer}>
-          <TouchableOpacity style={styles.card} onPress={null}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => {
+              navigation.push('RaiseBugScreen');
+            }}>
             <LottieView
               style={styles.lottie1}
               source={bugFindingLottie}
@@ -41,7 +45,11 @@ const UserScreen = () => {
             />
             <Text style={styles.cardText}>REPORT A BUG!</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.card} onPress={null}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => {
+              navigation.push('ResolvedBugScreen');
+            }}>
             <LottieView
               style={styles.lottie2}
               source={findingBugLottie}
