@@ -10,11 +10,15 @@ import {
   Image,
 } from 'react-native';
 import * as colors from '../../utils/colors';
-
-const LoginScreen = () => {
+import {auth_store} from '../../mobx/auth_store';
+const LoginScreen = navigation => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState();
 
+  const onLogin = () => {
+    auth_store.logIn(123);
+    console.log('Ab');
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{flex: 1}} keyboardShouldPersistTaps="always">
@@ -64,7 +68,7 @@ const LoginScreen = () => {
           <TouchableOpacity
             style={styles.loginBtnView}
             onPress={() => {
-              //onLogin(user);
+              onLogin(user);
             }}>
             <Text style={{color: colors.White}}>Icon</Text>
           </TouchableOpacity>
