@@ -102,7 +102,6 @@ const LoginScreen = navigation => {
               onValueChange={(itemValue, itemIndex) => setUserType(itemValue)}
               onFocus={() => setPickerFocused(true)}
               onBlur={() => setPickerFocused(false)}>
-              {/* This returns userType as 0 which is actually just used as a placeholder */}
               <Picker.Item
                 label="Select User Type"
                 enabled={!pickerFocused}

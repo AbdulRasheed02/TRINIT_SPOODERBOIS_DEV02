@@ -153,9 +153,9 @@ const RaiseBug = observer(() => {
               }}
               selectionColor={'black'}
               placeholderTextColor={colors.darkGrey}
-              value={bug_creation_store.getBugUserDevice}
+              value={bug_creation_store.getBugReplication}
               onChangeText={val => {
-                bug_creation_store.setBugUserDevice(val);
+                bug_creation_store.setBugReplication(val);
               }}
               multiline={true}
             />
@@ -163,7 +163,7 @@ const RaiseBug = observer(() => {
           <TouchableOpacity
             style={styles.submitBtnView}
             onPress={() => {
-              onLogin();
+              //onLogin();
             }}>
             <Icon name="chevron-right" size={scale(30)} color={colors.White} />
           </TouchableOpacity>
