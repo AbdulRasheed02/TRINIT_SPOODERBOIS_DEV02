@@ -24,7 +24,7 @@ const AssignBugsScreen = observer(({navigation}) => {
 
   const onSubmit = () => {
     if (
-      assign_bug_store.getAssignManager.trim() === '' ||
+      assign_bug_store.getAssignPerson.trim() === '' ||
       assign_bug_store.getPriority.trim() === '' ||
       assign_bug_store.getTag.trim() === 0 ||
       assign_bug_store.getDeadline === new Date()
@@ -53,10 +53,10 @@ const AssignBugsScreen = observer(({navigation}) => {
         <View>
           <View style={styles.textInput}>
             <TextInput
-              label="Assign Manager"
-              placeholder="Assign Manager"
+              label="Assign Person"
+              placeholder="Assign Person"
               mode="outlined"
-              value={assign_bug_store.getAssignManager}
+              value={assign_bug_store.getAssignPerson}
               autoCapitalize="none"
               style={{
                 backgroundColor: colors.Grey,
@@ -71,7 +71,7 @@ const AssignBugsScreen = observer(({navigation}) => {
               selectionColor={'white'}
               placeholderTextColor={colors.darkGrey}
               onChangeText={val => {
-                assign_bug_store.setAssignManager(val);
+                assign_bug_store.setAssignPerson(val);
               }}
               multiline={true}
             />

@@ -64,7 +64,7 @@ const LoginScreen = navigation => {
                   primary: 'black',
                 },
               }}
-              selectionColor={'black'}
+              selectionColor={'white'}
               placeholderTextColor={colors.darkGrey}
               onChangeText={user => {
                 setUserName(user);
@@ -90,7 +90,7 @@ const LoginScreen = navigation => {
                   primary: 'black',
                 },
               }}
-              selectionColor={'black'}
+              selectionColor="white"
               placeholderTextColor={colors.darkGrey}
               value={password}
               onChangeText={password => setPassword(password)}

@@ -2,19 +2,19 @@ import {action, makeObservable, observable, computed} from 'mobx';
 
 class AssignBugStore {
   state = {
-    assignManager: '',
+    assignPerson: '',
     priority: '',
     tag: '',
     deadline: new Date(),
     datePicker: false,
   };
 
-  setAssignManager = val => {
-    this.state.assignManager = val;
+  setAssignPerson = val => {
+    this.state.assignPerson = val;
   };
 
-  get getAssignManager() {
-    return this.state.assignManager;
+  get getAssignPerson() {
+    return this.state.assignPerson;
   }
 
   setPriority = val => {
@@ -53,8 +53,8 @@ class AssignBugStore {
     makeObservable(this, {
       state: observable,
 
-      setAssignManager: action,
-      getAssignManager: computed,
+      setAssignPerson: action,
+      getAssignPerson: computed,
 
       setPriority: action,
       getPriority: computed,
