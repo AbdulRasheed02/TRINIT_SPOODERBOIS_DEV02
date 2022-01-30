@@ -17,6 +17,11 @@ import {useToast} from 'react-native-toast-notifications';
 
 const RaiseBug = observer(({navigation}) => {
   const toast = useToast();
+  bug_creation_store.setBugTitle('');
+  bug_creation_store.setBugDesc('');
+  bug_creation_store.setBugLink('');
+  bug_creation_store.setBugUserDevice('');
+  bug_creation_store.setBugReplication('');
 
   const onSubmit = () => {
     if (

@@ -21,6 +21,10 @@ import DateTimePickerModal from 'react-native-modal-datetime-picker';
 const AssignBugsScreen = observer(({navigation}) => {
   const toast = useToast();
   const [picker1Focused, setPicker1Focused] = useState(false);
+  assign_bug_store.setAssignPerson('');
+  assign_bug_store.setPriority('');
+  assign_bug_store.setTag('');
+  assign_bug_store.setDeadline(new Date());
 
   const onSubmit = () => {
     if (
