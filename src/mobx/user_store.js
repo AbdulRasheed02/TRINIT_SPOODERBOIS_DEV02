@@ -4,6 +4,7 @@ class UserStore {
   state = {
     userName: '',
     userType: '',
+    userId: '',
   };
 
   setUserName = val => {
@@ -22,6 +23,14 @@ class UserStore {
     return this.state.userType;
   }
 
+  setUserId = val => {
+    this.state.userId = val;
+  };
+
+  get getUserId() {
+    return this.state.userId;
+  }
+
   constructor() {
     makeObservable(this, {
       state: observable,
@@ -31,6 +40,9 @@ class UserStore {
 
       setUserType: action,
       getUserType: computed,
+
+      setUserId: action,
+      getUserId: computed,
     });
   }
 }

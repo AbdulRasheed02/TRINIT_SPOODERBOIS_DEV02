@@ -1,69 +1,5 @@
 import * as constants from './constants';
 import * as userTypes from './userType';
-
-export const allBugsData = [
-  {
-    bugTitle: 'Blinking',
-    bugDesc: 'Screen is Blinking',
-    bugStatus: constants.bugRaised,
-  },
-  {
-    bugTitle: 'Blinking',
-    bugDesc: 'Screen is Blinking',
-    bugStatus: constants.bugRaised,
-  },
-  {
-    bugTitle: 'Blinking',
-    bugDesc: 'Screen is Blinking',
-    bugStatus: constants.bugRaised,
-  },
-  {
-    bugTitle: 'Blinking',
-    bugDesc: 'Screen is Blinking',
-    bugStatus: constants.bugRaised,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-  {
-    bugTitle: 'Button not Working',
-    bugDesc: 'Button is not Blinking',
-    bugStatus: constants.bugResolved,
-  },
-];
-
 export const userData = [
   {
     userName: 'Jegan',
@@ -114,5 +50,80 @@ export const userData = [
     userName: 'Rohan',
     userPosition: userTypes.employee,
     userId: 10,
+  },
+];
+
+export const allBugsData = [
+  {
+    bugTitle: 'Blinking',
+    bugDesc: 'Screen is Blinking',
+    bugStatus: constants.bugRaised,
+    Assignedto: userData[4].userName,
+  },
+  {
+    bugTitle: 'Blinking',
+    bugDesc: 'Screen is Blinking',
+    bugStatus: constants.bugRaised,
+    Assignedto: userData[4].userName,
+  },
+  {
+    bugTitle: 'Blinking',
+    bugDesc: 'Screen is Blinking',
+    bugStatus: constants.bugRaised,
+    Assignedto: userData[4].userName,
+  },
+  {
+    bugTitle: 'Blinking',
+    bugDesc: 'Screen is Blinking',
+    bugStatus: constants.bugRaised,
+    Assignedto: userData[4].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[4].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[5].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[5].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[5].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[6].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[6].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[6].userName,
+  },
+  {
+    bugTitle: 'Button not Working',
+    bugDesc: 'Button is not Blinking',
+    bugStatus: constants.bugResolved,
+    Assignedto: userData[7].userName,
   },
 ];

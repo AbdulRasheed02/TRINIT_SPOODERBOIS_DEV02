@@ -17,6 +17,7 @@ import * as userTypes from '../../utils/userType';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {useToast} from 'react-native-toast-notifications';
+import {userData} from '../../utils/database';
 
 const LoginScreen = navigation => {
   const [userName, setUserName] = useState('');

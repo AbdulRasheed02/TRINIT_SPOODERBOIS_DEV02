@@ -20,8 +20,13 @@ import resolvedBugLottie from '../../assets/lottieFiles/ResolvedBugs.json';
 const UserScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.headerTextContainer}>
-        <Text style={styles.menuText}>Menu</Text>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={styles.headerTextContainer}>
+          <Text style={styles.menuText}>Menu</Text>
+        </View>
+        <TouchableOpacity style={styles.headerTextContainer3}>
+          <Text style={styles.menuText3}>Logout</Text>
+        </TouchableOpacity>
       </View>
       <ScrollView style={{flex: 1}}>
         <View style={styles.headerTextContainer2}>
@@ -97,6 +102,23 @@ const styles = StyleSheet.create({
     fontSize: scale(20),
     color: 'black',
     textAlign: 'center',
+  },
+  headerTextContainer3: {
+    backgroundColor: colors.Turquiose,
+    marginTop: verticalScale(30),
+    marginBottom: verticalScale(20),
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: scale(20),
+    alignSelf: 'flex-start',
+    paddingHorizontal: scale(10),
+    paddingVertical: verticalScale(10),
+    borderRadius: scale(30),
+  },
+  menuText3: {
+    fontSize: scale(10),
+    fontWeight: 'bold',
+    color: colors.White,
   },
   cardContainer: {
     flex: 1,

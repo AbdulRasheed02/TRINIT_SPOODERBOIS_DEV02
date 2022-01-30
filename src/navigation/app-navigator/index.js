@@ -12,6 +12,7 @@ import AssignBugsScreen from '../../screens/AssignBugsScreen';
 import EmployeeScreen from '../../screens/EmployeeScreen';
 import ManagerScreen from '../../screens/ManagerScreen';
 import UserRolesScreen from '../../screens/UserRolesScreen';
+import AssignedBugsScreen from '../../screens/AssignedBugs';
 
 const RootStack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -82,6 +83,13 @@ const AppNavigator = () => {
         <RootStack.Screen
           name="UserRolesScreen"
           component={UserRolesScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <RootStack.Screen
+          name="AssignedBugsScreen"
+          component={AssignedBugsScreen}
           options={{
             headerShown: false,
           }}
