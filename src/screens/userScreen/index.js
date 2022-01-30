@@ -16,6 +16,7 @@ import {scale, verticalScale} from 'react-native-size-matters';
 import bugFindingLottie from '../../assets/lottieFiles/FindingBugs.json';
 import LottieView from 'lottie-react-native';
 import resolvedBugLottie from '../../assets/lottieFiles/ResolvedBugs.json';
+import {auth_store} from '../../mobx/auth_store';
 
 const UserScreen = ({navigation}) => {
   return (

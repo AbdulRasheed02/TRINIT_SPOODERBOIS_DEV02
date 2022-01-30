@@ -18,6 +18,7 @@ import findingBugLottie from '../../assets/lottieFiles/FindingBugs.json';
 import ListLottie from '../../assets/lottieFiles/List.json';
 import TeamLottie from '../../assets/lottieFiles/Team.json';
 import AssignBugsLottie from '../../assets/lottieFiles/AssignBugs.json';
+import {auth_store} from '../../mobx/auth_store';
 
 const ManagementScreen = ({navigation}) => {
   return (
