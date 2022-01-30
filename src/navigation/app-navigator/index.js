@@ -3,10 +3,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {user_store} from '../../mobx/user_store';
 import UserScreen from '../../screens/UserScreen';
-import ManagementScreen from '../../screens/ManagementScreen';
+import TeamLeaderScreen from '../../screens/TeamLeaderScreen';
 import * as userTypes from '../../utils/userType';
 import RaiseBug from '../../screens/RaiseBugScreen';
-import ResolvedBugs from '../../screens/ResolvedBugsScreen';
+import ResolvedBugsScreen from '../../screens/ResolvedBugsScreen';
+import AllBugsScreen from '../../screens/AllBugsScreen';
+import AssignBugsScreen from '../../screens/AssignBugsScreen';
+import EmployeeScreen from '../../screens/EmployeeScreen';
+import ManagerScreen from '../../screens/ManagerScreen';
+import UserRolesScreen from '../../screens/UserRolesScreen';
 
 const RootStack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -21,15 +26,31 @@ const AppNavigator = () => {
               headerShown: false,
             }}
           />
-        ) : (
+        ) : user_store.getUserType === userTypes.teamLeader ? (
           <RootStack.Screen
-            name="ManagementScreen"
-            component={ManagementScreen}
+            name="TeamLeaderScreen"
+            component={TeamLeaderScreen}
             options={{
               headerShown: false,
             }}
           />
-        )}
+        ) : user_store.getUserType === userTypes.manager ? (
+          <RootStack.Screen
+            name="ManagerScreen"
+            component={ManagerScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        ) : user_store.getUserType === userTypes.employee ? (
+          <RootStack.Screen
+            name="EmployeeScreen"
+            component={EmployeeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        ) : null}
         <RootStack.Screen
           name="RaiseBugScreen"
           component={RaiseBug}
@@ -39,7 +60,28 @@ const AppNavigator = () => {
         />
         <RootStack.Screen
           name="ResolvedBugScreen"
-          component={ResolvedBugs}
+          component={ResolvedBugsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <RootStack.Screen
+          name="AllBugsScreen"
+          component={AllBugsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <RootStack.Screen
+          name="AssignBugsScreen"
+          component={AssignBugsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <RootStack.Screen
+          name="UserRolesScreen"
+          component={UserRolesScreen}
           options={{
             headerShown: false,
           }}

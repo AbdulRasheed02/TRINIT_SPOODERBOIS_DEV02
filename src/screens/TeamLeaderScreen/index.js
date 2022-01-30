@@ -36,7 +36,11 @@ const ManagementScreen = ({navigation}) => {
         </View>
         <View style={styles.cardContainer}>
           <View style={styles.cardRow}>
-            <TouchableOpacity style={styles.cardLeft} onPress={null}>
+            <TouchableOpacity
+              style={styles.cardLeft}
+              onPress={() => {
+                navigation.push('AllBugsScreen');
+              }}>
               <LottieView
                 style={styles.lottie1}
                 source={ListLottie}
@@ -54,7 +58,11 @@ const ManagementScreen = ({navigation}) => {
                 <Text style={styles.cardText}>VIEW ALL BUGS</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.cardRight} onPress={null}>
+            <TouchableOpacity
+              style={styles.cardRight}
+              onPress={() => {
+                navigation.push('AssignBugsScreen');
+              }}>
               <LottieView
                 style={styles.lottie2}
                 source={AssignBugsLottie}
@@ -96,7 +104,11 @@ const ManagementScreen = ({navigation}) => {
                 <Text style={styles.cardText}>REPORT A BUG</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.cardRight} onPress={null}>
+            <TouchableOpacity
+              style={styles.cardRight}
+              onPress={() => {
+                navigation.push('UserRolesScreen');
+              }}>
               <LottieView
                 style={styles.lottie4}
                 source={TeamLottie}

@@ -13,9 +13,29 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {bug_creation_store} from '../../mobx/bug_creation_store';
 import {observer} from 'mobx-react';
+import {useToast} from 'react-native-toast-notifications';
 
-const RaiseBug = observer(() => {
-  console.log('WRITE');
+const RaiseBug = observer(({navigation}) => {
+  const toast = useToast();
+
+  const onSubmit = () => {
+    if (
+      bug_creation_store.getBugTitle.trim() === '' ||
+      bug_creation_store.getBugDesc.trim() === '' ||
+      bug_creation_store.getBugLink.trim() === '' ||
+      bug_creation_store.getBugUserDevice.trim() === '' ||
+      bug_creation_store.getBugReplication.trim() === ''
+    ) {
+      toast.show('Fill all the fields', {
+        type: 'warning',
+        placement: 'top',
+        animationType: 'slide-in',
+      });
+      return;
+    }
+    console.log('Pressed');
+    navigation.goBack();
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{flex: 1}} keyboardShouldPersistTaps="always">
@@ -28,7 +48,7 @@ const RaiseBug = observer(() => {
               label="Title"
               placeholder="Enter Title"
               mode="outlined"
-              value={bug_creation_store.getBugTilte}
+              value={bug_creation_store.getBugTitle}
               autoCapitalize="none"
               style={{
                 backgroundColor: colors.Grey,
@@ -163,7 +183,7 @@ const RaiseBug = observer(() => {
           <TouchableOpacity
             style={styles.submitBtnView}
             onPress={() => {
-              //onLogin();
+              onSubmit();
             }}>
             <Icon name="chevron-right" size={scale(30)} color={colors.White} />
           </TouchableOpacity>
