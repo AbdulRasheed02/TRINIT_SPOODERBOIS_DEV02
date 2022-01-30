@@ -1,4 +1,4 @@
-export const user = 1;
-export const teamLeader = 2;
-export const manager = 3;
-export const employee = 4;
+export const user = 'User';
+export const teamLeader = 'Team Leader';
+export const manager = 'Manager';
+export const employee = 'Employee';
