@@ -18,6 +18,7 @@ import findingBugLottie from '../../assets/lottieFiles/FindingBugs.json';
 import ListLottie from '../../assets/lottieFiles/List.json';
 import TeamLottie from '../../assets/lottieFiles/Team.json';
 import AssignBugsLottie from '../../assets/lottieFiles/AssignBugs.json';
+import {auth_store} from '../../mobx/auth_store';
 
 const ManagerScreen = ({navigation}) => {
   return (
@@ -26,7 +27,11 @@ const ManagerScreen = ({navigation}) => {
         <View style={styles.headerTextContainer}>
           <Text style={styles.menuText}>Menu</Text>
         </View>
-        <TouchableOpacity style={styles.headerTextContainer3}>
+        <TouchableOpacity
+          onPress={() => {
+            auth_store.logOut();
+          }}
+          style={styles.headerTextContainer3}>
           <Text style={styles.menuText3}>Logout</Text>
         </TouchableOpacity>
       </View>

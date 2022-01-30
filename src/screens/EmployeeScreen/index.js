@@ -27,7 +27,11 @@ const EmployeeScreen = ({navigation}) => {
         <View style={styles.headerTextContainer}>
           <Text style={styles.menuText}>Menu</Text>
         </View>
-        <TouchableOpacity style={styles.headerTextContainer3}>
+        <TouchableOpacity
+          onPress={() => {
+            auth_store.logOut();
+          }}
+          style={styles.headerTextContainer3}>
           <Text style={styles.menuText3}>Logout</Text>
         </TouchableOpacity>
       </View>
