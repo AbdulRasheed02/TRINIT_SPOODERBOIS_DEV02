@@ -6,7 +6,7 @@ class BugCreationStore {
     bugDesc: '',
     bugLink: '',
     bugUserDevice: '',
-    bugReplicatoin: '',
+    bugReplication: '',
   };
 
   setBugTitle = val => {
@@ -42,11 +42,11 @@ class BugCreationStore {
   }
 
   setBugReplication = val => {
-    this.state.bugReplicatoin = val;
+    this.state.bugReplication = val;
   };
 
   get getBugReplication() {
-    return this.state.bugReplicatoin;
+    return this.state.bugReplication;
   }
 
   constructor() {

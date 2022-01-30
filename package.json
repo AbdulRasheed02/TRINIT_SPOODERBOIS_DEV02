@@ -10,14 +10,17 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^5.1.0",
     "@react-native-picker/picker": "^2.2.1",
     "@react-navigation/native": "^6.0.7",
     "@react-navigation/native-stack": "^6.3.0",
     "lottie-react-native": "^5.0.1",
     "mobx": "^6.3.13",
     "mobx-react": "^7.2.1",
+    "moment": "^2.29.1",
     "react": "17.0.2",
     "react-native": "0.67.1",
+    "react-native-modal-datetime-picker": "^13.0.1",
     "react-native-paper": "^4.11.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.2",

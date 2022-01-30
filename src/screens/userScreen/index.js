@@ -13,9 +13,9 @@ import * as colors from '../../utils/colors';
 import {user_store} from '../../mobx/user_store';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {scale, verticalScale} from 'react-native-size-matters';
-import bugFindingLottie from '../../assets/lottieFiles/BugFinding.json';
+import bugFindingLottie from '../../assets/lottieFiles/FindingBugs.json';
 import LottieView from 'lottie-react-native';
-import findingBugLottie from '../../assets/lottieFiles/FindingBugs.json';
+import resolvedBugLottie from '../../assets/lottieFiles/ResolvedBugs.json';
 
 const UserScreen = ({navigation}) => {
   return (
@@ -52,7 +52,7 @@ const UserScreen = ({navigation}) => {
             }}>
             <LottieView
               style={styles.lottie2}
-              source={findingBugLottie}
+              source={resolvedBugLottie}
               speed={0.99}
               resizeMode="cover"
               autoPlay

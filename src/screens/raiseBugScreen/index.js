@@ -81,7 +81,6 @@ const RaiseBug = observer(({navigation}) => {
               mode="outlined"
               autoComplete={'off'}
               autoCapitalize="none"
-              secureTextEntry={true}
               theme={{
                 colors: {
                   primary: 'black',
@@ -109,7 +108,6 @@ const RaiseBug = observer(({navigation}) => {
               mode="outlined"
               autoComplete={'off'}
               autoCapitalize="none"
-              secureTextEntry={true}
               theme={{
                 colors: {
                   primary: 'black',
@@ -137,7 +135,6 @@ const RaiseBug = observer(({navigation}) => {
               mode="outlined"
               autoComplete={'off'}
               autoCapitalize="none"
-              secureTextEntry={true}
               theme={{
                 colors: {
                   primary: 'black',
@@ -165,7 +162,6 @@ const RaiseBug = observer(({navigation}) => {
               mode="outlined"
               autoComplete={'off'}
               autoCapitalize="none"
-              secureTextEntry={true}
               theme={{
                 colors: {
                   primary: 'black',
